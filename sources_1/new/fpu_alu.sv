@@ -49,16 +49,16 @@ module fpu_alu(
         // sign and exponent
         if(eA > eB) begin
             eR = eA;
-            sR = eA;
+            sR = sA;
         end
         else begin 
             eR = eB; // if both exp equal, look at mantissa
-            sR = eB;
+            sR = sB;
             if(eA == eB) begin
                 if(mA > mB)
                     sR = sA;
                 else
-                    sR = eB;
+                    sR = sB;
             end
         end
         
